@@ -1,11 +1,12 @@
+package LeetCode.Solved;
 class Solution {
     public static void main(String[] args) {
         ListNode list1 = new ListNode(1);
-        list1.add(2);
-        list1.add(3);
+        list1.addLast(2);
+        list1.addLast(3);
         ListNode list2 = new ListNode(1);
-        list2.add(3);
-        list2.add(4);
+        list2.addLast(3);
+        list2.addLast(4);
         ListNode result = ListNode.mergeTwoLists(list1, list2);
         while (result!=null) {
             System.out.print(result.val+" ");
@@ -30,7 +31,7 @@ class ListNode {
         this.next = next;
     }
 
-    void add(int data) {
+    void addLast(int data) {
         ListNode curNode = this;
         while (curNode.next != null) {
             curNode = curNode.next;
@@ -52,16 +53,7 @@ class ListNode {
             }
             result = result.next;
         }
-        while (l1 != null) {
-            result.next = l1;
-            l1 = l1.next;
-            result = result.next;
-        }
-        while (l2 != null) {
-            result.next = l2;
-            l2 = l2.next;
-            result = result.next;
-        }
+        result.next = (l1 != null) ? l1 : l2;
         return head.next;
     }
 }
