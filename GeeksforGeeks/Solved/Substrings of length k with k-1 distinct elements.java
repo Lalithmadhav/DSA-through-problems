@@ -1,4 +1,3 @@
-package GeeksforGeeks.Solved;
 import java.util.HashMap;
 
 class Solution {
@@ -10,8 +9,7 @@ class Solution {
             if(r >= k){
                 charbox.put(s.charAt(r-k), charbox.getOrDefault(s.charAt(r-k), 0)-1);
                 if (charbox.get(s.charAt(r-k)) == 0) {
-                    charbox.remove(s.charAt(r-k));
-                }
+                    charbox.remove(s.charAt(r-k));                }
             }
             if(r+1>=k && charbox.size()==k-1) {
                 count++;
